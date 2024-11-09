@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1q3xli0bekae"]
+
+[ext_resource type="PackedScene" uid="uid://bpi80ee83nk1o" path="res://人物换装/Scenes/Player.tscn" id="1_pdqm6"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_pdqm6")]

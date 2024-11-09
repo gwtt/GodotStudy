@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://babok5omg3opp"]
+
+[ext_resource type="Texture2D" uid="uid://cei8ccadc8q1l" path="res://2d灯光/sprite/Sewer_NoSunlight.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://flc7ed254js0" path="res://2d灯光/scene/player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cbhys04cxii15" path="res://2d灯光/sprite/wall.png" id="3"]
+[ext_resource type="Script" path="res://2d灯光/script/main.gd" id="4"]
+
+[sub_resource type="OccluderPolygon2D" id="1"]
+polygon = PackedVector2Array(-15, -15, -15, 15, 15, 15, 15, -16)
+
+[node name="main" type="Node2D"]
+script = ExtResource("4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.598958, 0.603704)
+texture = ExtResource("1")
+centered = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(459, 274)
+occluder = SubResource("1")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(460, 274)
+texture = ExtResource("3")
+
+[node name="player" parent="." instance=ExtResource("2")]
+position = Vector2(226, 273)

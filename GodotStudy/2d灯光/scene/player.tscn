@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://flc7ed254js0"]
+
+[ext_resource type="Script" path="res://2d灯光/script/player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bh3ih81wsrtjm" path="res://2d灯光/sprite/colorDot.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bvtw0350jxisb" path="res://2d灯光/sprite/Light -1.png" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(32, 32)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="Light2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.0
+texture = ExtResource("3")
+offset = Vector2(240, 0)
+texture_scale = 0.5

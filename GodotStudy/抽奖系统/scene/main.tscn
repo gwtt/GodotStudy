@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://d1diwpjt4ya8x"]
+
+[ext_resource type="PackedScene" uid="uid://doxji2aatm45u" path="res://抽奖系统/scene/slot.tscn" id="1_fdiae"]
+[ext_resource type="Script" path="res://抽奖系统/script/main.gd" id="1_k4fhg"]
+[ext_resource type="Texture2D" uid="uid://bgie1suty8b4k" path="res://抽奖系统/sprite/imh1.png" id="2_3udwy"]
+[ext_resource type="Texture2D" uid="uid://c84ucyfkwh1ms" path="res://抽奖系统/sprite/.png" id="3_rsvlu"]
+[ext_resource type="Texture2D" uid="uid://cffftpn4r28nt" path="res://抽奖系统/sprite/NES - Snow Brothers Snow Bros Nick & Tom - Machine Bonus_27.png" id="5_hxpy1"]
+[ext_resource type="Texture2D" uid="uid://djxeqrsha0vkt" path="res://抽奖系统/sprite/NES - Snow Brothers Snow Bros Nick & Tom - Machine Bonus_28.png" id="6_shj0k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47o8u"]
+atlas = ExtResource("2_3udwy")
+region = Rect2(0, 0, 16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spwo3"]
+atlas = ExtResource("2_3udwy")
+region = Rect2(16, 0, 16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m3yu"]
+atlas = ExtResource("2_3udwy")
+region = Rect2(32, 0, 16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4t0e"]
+atlas = ExtResource("2_3udwy")
+region = Rect2(48, 0, 16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmoom"]
+atlas = ExtResource("2_3udwy")
+region = Rect2(0, 0, 16, 80)
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47o8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spwo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m3yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4t0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmoom")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_k4fhg")
+
+[node name="ani" type="AnimatedSprite2D" parent="."]
+position = Vector2(46, -50)
+sprite_frames = SubResource("1")
+frame = 4
+frame_progress = 1.0
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -47.0
+offset_top = -72.0
+offset_right = 48.0
+offset_bottom = 88.0
+texture = ExtResource("3_rsvlu")
+
+[node name="slot" parent="." instance=ExtResource("1_fdiae")]
+offset_left = -32.0
+offset_top = -40.0
+offset_right = -16.0
+offset_bottom = -8.0
+
+[node name="slot2" parent="." instance=ExtResource("1_fdiae")]
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = -8.0
+
+[node name="slot3" parent="." instance=ExtResource("1_fdiae")]
+offset_left = 16.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -8.0
+
+[node name="light1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-24, 18)
+texture = ExtResource("5_hxpy1")
+
+[node name="light2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 18)
+texture = ExtResource("5_hxpy1")
+
+[node name="light3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(24, 18)
+texture = ExtResource("5_hxpy1")
+
+[node name="hand" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-24, 27)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_shj0k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -120.0
+offset_top = -56.0
+offset_right = -101.0
+offset_bottom = -33.0
+text = "1p"
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
