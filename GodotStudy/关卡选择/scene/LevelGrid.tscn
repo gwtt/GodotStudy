@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkjewnqa311s1"]
+
+[ext_resource type="PackedScene" uid="uid://2bm1wjve18ly" path="res://关卡选择/scene/level.tscn" id="1_bv8sa"]
+
+[node name="LevelGrid" type="GridContainer"]
+offset_right = 140.0
+offset_bottom = 44.0
+columns = 6
+
+[node name="level" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level2" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level3" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level4" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level5" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level6" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level7" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level8" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level9" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level10" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level11" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="level12" parent="." instance=ExtResource("1_bv8sa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2

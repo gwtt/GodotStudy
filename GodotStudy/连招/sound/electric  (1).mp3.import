@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h7tpla4mfgfu"
+path="res://.godot/imported/electric  (1).mp3-cf25812491dadd66eabfb4502b763235.mp3str"
+
+[deps]
+
+source_file="res://连招/sound/electric  (1).mp3"
+dest_files=["res://.godot/imported/electric  (1).mp3-cf25812491dadd66eabfb4502b763235.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

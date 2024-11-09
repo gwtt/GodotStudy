@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://2bm1wjve18ly"]
+
+[ext_resource type="Texture2D" uid="uid://bufgo6f76la3c" path="res://关卡选择/sprite/Hover.png" id="1_0vxvh"]
+[ext_resource type="Script" path="res://关卡选择/script/level.gd" id="2_fh28k"]
+[ext_resource type="Texture2D" uid="uid://0fdjqwsxsei0" path="res://关卡选择/sprite/Locked.png" id="2_i4ass"]
+[ext_resource type="FontFile" path="res://关卡选择/font/num.tres" id="3_jnbrp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cdvl"]
+texture = ExtResource("1_0vxvh")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="level" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -992.0
+offset_bottom = -488.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2cdvl")
+script = ExtResource("2_fh28k")
+
+[node name="lock" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_i4ass")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="num" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jnbrp")
+text = "
+"
+horizontal_alignment = 1

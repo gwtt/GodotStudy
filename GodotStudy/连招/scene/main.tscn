@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cop6ejcqoc7x2"]
+
+[ext_resource type="PackedScene" uid="uid://us5ahq66ab6e" path="res://连招/scene/bg.tscn" id="1_3unft"]
+[ext_resource type="PackedScene" uid="uid://d3s77kiuq40x8" path="res://连招/scene/inputList.tscn" id="2_cs8xo"]
+[ext_resource type="PackedScene" uid="uid://db0gwc56aufwc" path="res://连招/scene/player.tscn" id="3_v18xi"]
+
+[node name="main" type="Node2D"]
+
+[node name="bg" parent="." instance=ExtResource("1_3unft")]
+
+[node name="inputList" parent="." instance=ExtResource("2_cs8xo")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player" parent="." instance=ExtResource("3_v18xi")]
+position = Vector2(164, 149)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 98)
+zoom = Vector2(3, 4)
