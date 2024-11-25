@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 Global="*res://人物换装/Scripts/Global.gd"
 Game="*res://连招/script/game.gd"
+Pinyin="*res://汉字转声音/pinyin.gd"
+
+[dotnet]
+
+project/assembly_name="study"
 
 [input]
 

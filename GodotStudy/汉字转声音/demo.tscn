@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvh5jothjrm7e"]
+
+[ext_resource type="Script" path="res://汉字转声音/_pinyin.gd" id="1_6lwni"]
+
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_6lwni")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 385.0
+offset_top = 253.0
+offset_right = 738.0
+offset_bottom = 358.0
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
