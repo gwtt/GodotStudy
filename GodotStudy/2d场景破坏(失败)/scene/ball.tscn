@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc5nsmrbnxx71"]
+
+[ext_resource type="Script" path="res://2d场景破坏(失败)/script/ball.gd" id="1_2uo2p"]
+
+[sub_resource type="CircleShape2D" id="1"]
+
+[node name="ball" type="RigidBody2D"]
+modulate = Color(0.752941, 0.490196, 0.972549, 1)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_2uo2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

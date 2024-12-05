@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqgt4lxwgv8xw"]
+
+[ext_resource type="Script" path="res://2d场景破坏(失败)/scene/破坏地形.gd" id="1_jionk"]
+[ext_resource type="PackedScene" uid="uid://cpx3ot8ctvpvy" path="res://2d场景破坏(失败)/scene/bullet.tscn" id="2_jp75f"]
+
+[node name="破坏地形" type="Node2D"]
+script = ExtResource("1_jionk")
+
+[node name="Bullet1" parent="." instance=ExtResource("2_jp75f")]
+position = Vector2(571, 11)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://desv0pjnpt8qh"]
+
+[ext_resource type="Script" path="res://UI/Talent_Tree/talent_icon.gd" id="1_cx3sk"]
+[ext_resource type="Texture2D" uid="uid://dwohumnttrrfj" path="res://UI/Talent_Tree/tree.png" id="2_dv1n6"]
+[ext_resource type="Shader" path="res://UI/Talent_Tree/talent_icon.gdshader" id="2_lrxrf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2frm0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q03sd"]
+shader = ExtResource("2_lrxrf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3uue"]
+
+[node name="TalentIcon" type="PanelContainer"]
+custom_minimum_size = Vector2(80, 70)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2frm0")
+script = ExtResource("1_cx3sk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_q03sd")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_dv1n6")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_s3uue")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s3uue")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

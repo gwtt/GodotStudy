@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://fwedvy62oqbp"]
+
+[ext_resource type="Script" path="res://2d场景破坏(失败)/script/tile.gd" id="1_rghx0"]
+
+[node name="tile" type="StaticBody2D"]
+collision_mask = 6
+script = ExtResource("1_rghx0")
+textureImg = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+show_behind_parent = true
