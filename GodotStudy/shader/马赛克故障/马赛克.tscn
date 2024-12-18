@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://clyeel8c3kbpa"]
+
+[ext_resource type="Script" path="res://shader/马赛克故障/马赛克.gd" id="1_3f4n5"]
+[ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_06tuc"]
+[ext_resource type="Shader" path="res://shader/马赛克故障/马赛克1.gdshader" id="2_fx0i4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrc3c"]
+shader = ExtResource("2_fx0i4")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[node name="马赛克" type="Node2D"]
+script = ExtResource("1_3f4n5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hrc3c")
+position = Vector2(640, 384)
+scale = Vector2(21.1562, 13.6406)
+texture = ExtResource("2_06tuc")

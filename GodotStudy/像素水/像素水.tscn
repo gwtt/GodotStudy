@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvnvxfjcjuwb2"]
+
+[ext_resource type="Shader" path="res://像素水/像素水.gdshader" id="1_74r5i"]
+[ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_ulfms"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjwje"]
+shader = ExtResource("1_74r5i")
+shader_parameter/speed = Vector2(0.015, 0.055)
+shader_parameter/speedSecondNoise = Vector2(-0.014, -0.125)
+shader_parameter/distortionStrength = 0.2
+shader_parameter/noise = ExtResource("2_ulfms")
+shader_parameter/secNoise = ExtResource("2_ulfms")
+shader_parameter/toneColor = Color(0.400197, 0.781138, 0.780412, 1)
+shader_parameter/topColor = Color(1, 1, 1, 1)
+shader_parameter/lightStart = 0.384
+shader_parameter/lightEnd = 0.686
+shader_parameter/pixelSize = 140.0
+
+[sub_resource type="Gradient" id="Gradient_0knem"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_43t7s"]
+gradient = SubResource("Gradient_0knem")
+
+[node name="像素水" type="Node2D"]
+position = Vector2(696, 312)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jjwje")
+position = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_43t7s")

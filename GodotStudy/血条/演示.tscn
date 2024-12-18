@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bla2xma7nkntl"]
+
+[ext_resource type="Script" path="res://血条/演示.gd" id="1_3l5g0"]
+[ext_resource type="PackedScene" uid="uid://dgi5ircn4y35v" path="res://血条/血条.tscn" id="2_eh1a2"]
+
+[node name="演示" type="Node2D"]
+position = Vector2(472, 280)
+script = ExtResource("1_3l5g0")
+
+[node name="health_bar" parent="." instance=ExtResource("2_eh1a2")]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp2qvyrsuq7vo"]
+
+[ext_resource type="Script" path="res://水波纹/水波纹.gd" id="1_q441q"]
+[ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_e2e77"]
+[ext_resource type="Shader" path="res://水波纹/水波纹2.gdshader" id="2_hiwf0"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s5pb0"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2qfvv"]
+noise = SubResource("FastNoiseLite_s5pb0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_178pi"]
+shader = ExtResource("2_hiwf0")
+shader_parameter/center1 = Vector2(0.5, 0.5)
+shader_parameter/center2 = Vector2(0.4, 0.4)
+shader_parameter/time = 0.645
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2qfvv")
+
+[node name="水波纹" type="Node2D"]
+script = ExtResource("1_q441q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_178pi")
+position = Vector2(760, 256)
+texture = ExtResource("2_e2e77")

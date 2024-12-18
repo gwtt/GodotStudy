@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckln1n367y6fn"]
 
-[ext_resource type="Shader" path="res://shader/噪声.gdshader" id="1_vk477"]
+[ext_resource type="Shader" path="res://shader/噪声/噪声.gdshader" id="1_vk477"]
 [ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_4uj6a"]
-[ext_resource type="Script" path="res://shader/噪声.gd" id="3_58umb"]
+[ext_resource type="Script" path="res://shader/噪声/噪声.gd" id="3_58umb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ur55p"]
 shader = ExtResource("1_vk477")

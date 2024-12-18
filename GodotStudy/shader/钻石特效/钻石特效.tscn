@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://jx0b8fkxqd2r"]
+
+[ext_resource type="Script" path="res://shader/钻石特效/钻石特效.gd" id="1_8evha"]
+[ext_resource type="Shader" path="res://shader/钻石特效/钻石特效.gdshader" id="1_vn4bk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rh32a"]
+shader = ExtResource("1_vn4bk")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 10.0
+
+[sub_resource type="Gradient" id="Gradient_n8w5a"]
+colors = PackedColorArray(0.733333, 0.733333, 0.733333, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1c26j"]
+gradient = SubResource("Gradient_n8w5a")
+
+[node name="钻石特效" type="Node2D"]
+script = ExtResource("1_8evha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rh32a")
+position = Vector2(576, 328)
+scale = Vector2(18, 10.25)
+texture = SubResource("GradientTexture2D_1c26j")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(632, 288)
+amount = 400
+gravity = Vector2(0, 0)
