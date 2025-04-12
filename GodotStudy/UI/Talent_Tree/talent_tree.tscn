@@ -13,7 +13,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3g0am"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfy64"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0ne7"]
 bg_color = Color(0.729412, 0.729412, 0.729412, 1)
 border_width_left = 2
 border_width_top = 2
@@ -29,7 +29,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arpud"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt3q5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h641w"]
 bg_color = Color(0.729412, 0.729412, 0.729412, 1)
 border_width_left = 2
 border_width_top = 2
@@ -43,7 +43,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5poy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2owj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np3ay"]
 bg_color = Color(0.729412, 0.729412, 0.729412, 1)
 border_width_left = 2
 border_width_top = 2
@@ -59,7 +59,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxx0i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16noo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km730"]
 bg_color = Color(0.729412, 0.729412, 0.729412, 1)
 border_width_left = 2
 border_width_top = 2
@@ -120,7 +120,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_3g0am")
 
 [node name="TalentIcon4" parent="MarginContainer/Columns/Tier 1" instance=ExtResource("3_qshie")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yfy64")
+theme_override_styles/panel = SubResource("StyleBoxFlat_p0ne7")
 talentResource = ExtResource("4_v7cc2")
 
 [node name="TalentIcon5" parent="MarginContainer/Columns/Tier 1" instance=ExtResource("3_qshie")]
@@ -137,7 +137,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_arpud")
 
 [node name="TalentIcon2" parent="MarginContainer/Columns/Tier 2" instance=ExtResource("3_qshie")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tt3q5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_h641w")
 talentResource = ExtResource("5_8yq88")
 
 [node name="TalentIcon3" parent="MarginContainer/Columns/Tier 2" instance=ExtResource("3_qshie")]
@@ -146,7 +146,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_b5poy")
 
 [node name="TalentIcon4" parent="MarginContainer/Columns/Tier 2" instance=ExtResource("3_qshie")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_i2owj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_np3ay")
 talentResource = ExtResource("6_v1co0")
 
 [node name="TalentIcon5" parent="MarginContainer/Columns/Tier 2" instance=ExtResource("3_qshie")]
@@ -163,7 +163,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_bxx0i")
 
 [node name="TalentIcon2" parent="MarginContainer/Columns/Tier 3" instance=ExtResource("3_qshie")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_16noo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_km730")
 talentResource = ExtResource("7_w1dv3")
 
 [node name="TalentIcon3" parent="MarginContainer/Columns/Tier 3" instance=ExtResource("3_qshie")]

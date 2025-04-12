@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://b8viqpid0xgcg"]
+
+[ext_resource type="Shader" uid="uid://dibh8fqw1j0fs" path="res://闪电/thunder.tres" id="1_gk53f"]
+[ext_resource type="Texture2D" uid="uid://b0b58rpjqkero" path="res://闪电/thunder_vfx.png" id="2_24w17"]
+[ext_resource type="Texture2D" uid="uid://gfqc7kf3klvg" path="res://闪电/T_basic1_vfx.PNG" id="3_sy2jq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24w17"]
+shader = ExtResource("1_gk53f")
+shader_parameter/vanishing_value = 0.0
+shader_parameter/Speed = Vector2(-2, 0)
+shader_parameter/basic_texture = ExtResource("2_24w17")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ee5mu"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_dhkg7"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hia2d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mem2s"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_jryfj"]
+curve_x = SubResource("Curve_dhkg7")
+curve_y = SubResource("Curve_hia2d")
+curve_z = SubResource("Curve_mem2s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ee5mu"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 50.0
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = -500.0
+initial_velocity_max = -400.0
+radial_velocity_min = 500.0
+radial_velocity_max = 700.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.05
+scale_max = 0.2
+scale_curve = SubResource("CurveXYZTexture_jryfj")
+color = Color(0.876293, 0.635562, 0.0726563, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k1orp"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_sy2jq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.130604, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ee5mu"]
+curve = SubResource("Curve_sy2jq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_odadn"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_ee5mu")
+color = Color(1.2, 1, 0.5, 1)
+
+[node name="Thunder" type="Node2D"]
+
+[node name="VFX" type="Node2D" parent="."]
+position = Vector2(163, 9)
+
+[node name="Line2D" type="Line2D" parent="VFX"]
+material = SubResource("ShaderMaterial_24w17")
+position = Vector2(570, 37)
+points = PackedVector2Array(3, -5, 3, 581)
+width = 150.0
+default_color = Color(1.8, 1.2, 0.22, 1)
+texture_mode = 2
+
+[node name="sparks" type="GPUParticles2D" parent="VFX"]
+material = SubResource("CanvasItemMaterial_ee5mu")
+position = Vector2(574, 611)
+amount = 15
+texture = ExtResource("3_sy2jq")
+lifetime = 0.15
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ee5mu")
+
+[node name="flare" type="GPUParticles2D" parent="VFX"]
+material = SubResource("CanvasItemMaterial_k1orp")
+position = Vector2(572, 612)
+amount = 1
+texture = ExtResource("3_sy2jq")
+lifetime = 0.15
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_odadn")
+
+[node name="PointLight2D" type="PointLight2D" parent="VFX"]
+position = Vector2(573, 616)
+texture = ExtResource("3_sy2jq")

@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rh32a"]
 shader = ExtResource("1_vn4bk")
-shader_parameter/progress = 0.0
+shader_parameter/progress = 1.0
 shader_parameter/diamondPixelSize = 10.0
 
 [sub_resource type="Gradient" id="Gradient_n8w5a"]
@@ -24,6 +24,7 @@ scale = Vector2(18, 10.25)
 texture = SubResource("GradientTexture2D_1c26j")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 position = Vector2(632, 288)
 amount = 400
 gravity = Vector2(0, 0)
