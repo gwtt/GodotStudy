@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0b58rpjqkero"
-path="res://.godot/imported/thunder_vfx.png-bb533f5c75d06926ebbfb8dc1f96844f.ctex"
+uid="uid://dq84qable6g0n"
+path="res://.godot/imported/T_Gradient_circle22.jpg-e47caf3b32199018a2347a5953845849.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://闪电/thunder_vfx.png"
-dest_files=["res://.godot/imported/thunder_vfx.png-bb533f5c75d06926ebbfb8dc1f96844f.ctex"]
+source_file="res://vfx/动态火焰/art/T_Gradient_circle22.jpg"
+dest_files=["res://.godot/imported/T_Gradient_circle22.jpg-e47caf3b32199018a2347a5953845849.ctex"]
 
 [params]
 

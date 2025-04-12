@@ -167,4 +167,4 @@ shape = SubResource("RectangleShape2D_oci16")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fn3kw")
 animation = &"run"
-frame_progress = 0.757579
+frame_progress = 0.634139

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hu46ehcsmj1u"
-path="res://.godot/imported/T_VFX_simple_1.png-2d56b432d415c86c441242d98c97381d.ctex"
+uid="uid://di870mxen3i8n"
+path="res://.godot/imported/T_VFX_Noise_12.PNG-dfc92326554df5a587b40deff5e59a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://闪电/T_VFX_simple_1.png"
-dest_files=["res://.godot/imported/T_VFX_simple_1.png-2d56b432d415c86c441242d98c97381d.ctex"]
+source_file="res://vfx/动态火焰/art/T_VFX_Noise_12.PNG"
+dest_files=["res://.godot/imported/T_VFX_Noise_12.PNG-dfc92326554df5a587b40deff5e59a6b.ctex"]
 
 [params]
 

@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbo37e2y20x8q"]
+
+[ext_resource type="Shader" uid="uid://nsalyphaqgro" path="res://vfx/静态火焰/static_fire.tres" id="1_d8o1v"]
+[ext_resource type="Texture2D" uid="uid://cspyjjqa67jc5" path="res://vfx/静态火焰/art/T_1_pixel.jpg" id="1_qgwdk"]
+[ext_resource type="Texture2D" uid="uid://bcmjxtq0in7" path="res://vfx/静态火焰/art/T_VFX_Noise_465.png" id="2_7s7mt"]
+[ext_resource type="Texture2D" uid="uid://bya1rd4cq0d2a" path="res://vfx/静态火焰/art/T_Gradient_circle22.jpg" id="3_7s7mt"]
+
+[sub_resource type="Gradient" id="Gradient_67x60"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7s7mt"]
+gradient = SubResource("Gradient_67x60")
+fill_from = Vector2(0, 0.303419)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_pllie"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ubwhn"]
+gradient = SubResource("Gradient_pllie")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_7s7mt"]
+offsets = PackedFloat32Array(0, 0.531062, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.734313, 0.270933, 0.223392, 1, 0.903834, 0.902475, 2.31028e-06, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pllie"]
+gradient = SubResource("Gradient_7s7mt")
+fill_from = Vector2(0.452991, 1)
+fill_to = Vector2(0.74359, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67x60"]
+shader = ExtResource("1_d8o1v")
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/Speed = Vector2(0, 1)
+shader_parameter/Texture1 = ExtResource("2_7s7mt")
+shader_parameter/Texture2 = SubResource("GradientTexture2D_7s7mt")
+shader_parameter/Texture3 = ExtResource("3_7s7mt")
+shader_parameter/Texture4 = SubResource("GradientTexture2D_ubwhn")
+shader_parameter/Texture5 = SubResource("GradientTexture2D_pllie")
+
+[node name="StaticFire" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_67x60")
+position = Vector2(168.75, 168.75)
+scale = Vector2(338.5, 338.5)
+texture = ExtResource("1_qgwdk")
