@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv8l10rupqbl6"]
+
+[ext_resource type="Texture2D" uid="uid://ckbo8fwvdfdcm" path="res://vfx/动态火焰/art/T_VFX_Noise_465.png" id="1_xb1qa"]
+
+[sub_resource type="Shader" id="Shader_r8ukh"]
+code = "shader_type canvas_item;
+
+uniform sampler2D image_texture;
+uniform sampler2D image_multiplier;
+uniform sampler2D image_add;
+uniform sampler2D image_gradient_tint;
+uniform float extra_power = 1.0;
+
+uniform float effect_scale = 1.0;
+uniform float effect_repeat = 2.0;
+uniform vec2 effect_center = vec2(0.5);
+uniform vec2 uv_mod = vec2(1.0);
+uniform vec2 scroll_speed = vec2(0.0);
+
+vec2 coordinates(vec2 uv, vec2 center, float scale, float repeat) {
+    vec2 dir = uv - center;
+    float radius = length(dir)*2.0;
+    float angle = (atan(dir.x, dir.y) / TAU) + 0.5;
+    return vec2(angle*repeat, radius*scale);
+}
+
+void fragment() {
+    vec2 uv = uv_mod * coordinates(UV, effect_center, effect_scale, effect_repeat);
+    vec4 image_tex = texture(image_texture, mod(uv + (TIME * scroll_speed), 1.0));
+    image_tex *= texture(image_multiplier, UV);
+    image_tex += texture(image_add, UV);
+    
+    vec4 gradient = textureLod(image_gradient_tint, vec2(clamp(image_tex.r * extra_power, 0.0, 1.0), 0.0), 0.0);
+    COLOR = gradient * extra_power * COLOR;
+}"
+
+[sub_resource type="Gradient" id="Gradient_niorc"]
+offsets = PackedFloat32Array(0, 0.348697, 0.38477, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.54099, 0.54099, 0.54099, 1, 0.0695316, 0.0695316, 0.0695316, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_niorc"]
+gradient = SubResource("Gradient_niorc")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.504274, 0.235043)
+
+[sub_resource type="Gradient" id="Gradient_x0gib"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.232465, 0.651303, 0.987976, 0.995992, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.378747, 0.0250665, 0.571085, 1, 0.414736, 0.0531968, 0.602292, 1, 0.874634, 0.75057, 0.938609, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_baagj"]
+gradient = SubResource("Gradient_x0gib")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.606838, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x0gib"]
+gradient = SubResource("Gradient_niorc")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xb1qa"]
+shader = SubResource("Shader_r8ukh")
+shader_parameter/image_texture = ExtResource("1_xb1qa")
+shader_parameter/image_multiplier = SubResource("GradientTexture2D_x0gib")
+shader_parameter/image_add = SubResource("GradientTexture2D_niorc")
+shader_parameter/image_gradient_tint = SubResource("GradientTexture2D_baagj")
+shader_parameter/extra_power = 8.0
+shader_parameter/effect_scale = 1.0
+shader_parameter/effect_repeat = 2.0
+shader_parameter/effect_center = Vector2(0.5, 0.5)
+shader_parameter/uv_mod = Vector2(1, 1)
+shader_parameter/scroll_speed = Vector2(0.2, 2)
+
+[node name="BlackHole" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xb1qa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -896.0
+offset_bottom = -392.0
+grow_horizontal = 2
+grow_vertical = 2

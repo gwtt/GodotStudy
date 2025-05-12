@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dacxqqhi1ryr7"]
 
-[ext_resource type="Shader" path="res://灯光/灯光.gdshader" id="1_tpsnk"]
+[ext_resource type="Shader" uid="uid://bvcsrs2cbpgkt" path="res://灯光/灯光.gdshader" id="1_tpsnk"]
 [ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_vcxrj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dhgui"]

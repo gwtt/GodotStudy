@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://jx0b8fkxqd2r"]
 
-[ext_resource type="Script" path="res://shader/钻石特效/钻石特效.gd" id="1_8evha"]
-[ext_resource type="Shader" path="res://shader/钻石特效/钻石特效.gdshader" id="1_vn4bk"]
+[ext_resource type="Script" uid="uid://dlbmccy2sgerg" path="res://shader/钻石特效/钻石特效.gd" id="1_8evha"]
+[ext_resource type="Shader" uid="uid://b126vre3r3qv6" path="res://shader/钻石特效/钻石特效.gdshader" id="1_vn4bk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rh32a"]
 shader = ExtResource("1_vn4bk")
