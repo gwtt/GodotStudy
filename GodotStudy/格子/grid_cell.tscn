@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://wgcgexxr0meq"]
+
+[ext_resource type="PackedScene" uid="uid://but5dsxxpfbsn" path="res://格子/panel.tscn" id="1_bk2eb"]
+
+[node name="Grid" type="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" parent="." instance=ExtResource("1_bk2eb")]
+layout_mode = 2

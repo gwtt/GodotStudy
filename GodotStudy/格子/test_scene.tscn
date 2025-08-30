@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dso28jna6kueb"]
+
+[ext_resource type="Script" uid="uid://mt4iktnr7v4" path="res://格子/test_scene.gd" id="1_eu0ju"]
+[ext_resource type="PackedScene" uid="uid://coejprjf7us05" path="res://格子/grid.tscn" id="1_kt7u0"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_eu0ju")
+
+[node name="Grid" parent="." instance=ExtResource("1_kt7u0")]
+offset_right = 2048.0
+offset_bottom = 2048.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+width = 32
+height = 32
+cellWidth = 64
+cellHeight = 64

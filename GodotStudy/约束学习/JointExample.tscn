@@ -21,7 +21,7 @@ texture = ExtResource("1_ye3hl")
 shape = SubResource("CircleShape2D_g37wc")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(-3, -39)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(2.49999, -55)

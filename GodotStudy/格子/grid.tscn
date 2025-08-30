@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://coejprjf7us05"]
+
+[ext_resource type="Script" uid="uid://bpj57sh8jf7pv" path="res://格子/grid.gd" id="1_6slig"]
+
+[node name="Grid" type="GridContainer"]
+custom_minimum_size = Vector2(64, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6slig")
