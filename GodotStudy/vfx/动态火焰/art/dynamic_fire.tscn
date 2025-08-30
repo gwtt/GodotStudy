@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cw8ihlwjufl6j"]
 
-[ext_resource type="Shader" uid="uid://dg45xgiuhltbf" path="res://vfx/动态火焰/art/dynamic_fire.tres" id="1_eg2nc"]
+[ext_resource type="Shader" uid="uid://bkig2q7ic7kiy" path="res://vfx/动态火焰/art/dynamic_fire.tres" id="1_eg2nc"]
 [ext_resource type="Texture2D" uid="uid://cb2l2c58iwvuw" path="res://vfx/动态火焰/art/T_1_pixel.jpg" id="1_sk7rl"]
 [ext_resource type="Texture2D" uid="uid://d1sranqwbchkc" path="res://vfx/动态火焰/art/1.png" id="3_cvy54"]
 

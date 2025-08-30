@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://doxji2aatm45u"]
 
-[ext_resource type="Script" path="res://抽奖系统/script/slot.gd" id="1_extyi"]
+[ext_resource type="Script" uid="uid://dn0pkjh1py7hu" path="res://抽奖系统/script/slot.gd" id="1_extyi"]
 
 [node name="slot" type="Control"]
 clip_contents = true

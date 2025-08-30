@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://flc7ed254js0"]
 
-[ext_resource type="Script" path="res://2d灯光/script/player.gd" id="1"]
+[ext_resource type="Script" uid="uid://wdj14sd06lsn" path="res://2d灯光/script/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bh3ih81wsrtjm" path="res://2d灯光/sprite/colorDot.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bvtw0350jxisb" path="res://2d灯光/sprite/Light -1.png" id="3"]
 

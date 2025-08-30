@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d1diwpjt4ya8x"]
 
 [ext_resource type="PackedScene" uid="uid://doxji2aatm45u" path="res://抽奖系统/scene/slot.tscn" id="1_fdiae"]
-[ext_resource type="Script" path="res://抽奖系统/script/main.gd" id="1_k4fhg"]
+[ext_resource type="Script" uid="uid://bmiqhy7ss7wfh" path="res://抽奖系统/script/main.gd" id="1_k4fhg"]
 [ext_resource type="Texture2D" uid="uid://bgie1suty8b4k" path="res://抽奖系统/sprite/imh1.png" id="2_3udwy"]
 [ext_resource type="Texture2D" uid="uid://c84ucyfkwh1ms" path="res://抽奖系统/sprite/.png" id="3_rsvlu"]
 [ext_resource type="Texture2D" uid="uid://cffftpn4r28nt" path="res://抽奖系统/sprite/NES - Snow Brothers Snow Bros Nick & Tom - Machine Bonus_27.png" id="5_hxpy1"]
@@ -101,7 +101,6 @@ position = Vector2(24, 18)
 texture = ExtResource("5_hxpy1")
 
 [node name="hand" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-24, 27)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_shj0k")

@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 Global="*res://人物换装/Scripts/Global.gd"
-Game="*res://连招/script/game.gd"
 Pinyin="*res://汉字转声音/pinyin.gd"
+Game="*res://抽奖系统/script/game.gd"
 
 [dotnet]
 

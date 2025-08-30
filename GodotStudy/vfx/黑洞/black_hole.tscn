@@ -29,7 +29,7 @@ void fragment() {
     vec4 image_tex = texture(image_texture, mod(uv + (TIME * scroll_speed), 1.0));
     image_tex *= texture(image_multiplier, UV);
     image_tex += texture(image_add, UV);
-    
+
     vec4 gradient = textureLod(image_gradient_tint, vec2(clamp(image_tex.r * extra_power, 0.0, 1.0), 0.0), 0.0);
     COLOR = gradient * extra_power * COLOR;
 }"

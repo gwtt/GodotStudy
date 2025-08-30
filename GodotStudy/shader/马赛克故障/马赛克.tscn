@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://clyeel8c3kbpa"]
 
-[ext_resource type="Script" path="res://shader/马赛克故障/马赛克.gd" id="1_3f4n5"]
+[ext_resource type="Script" uid="uid://pid77maj88pp" path="res://shader/马赛克故障/马赛克.gd" id="1_3f4n5"]
 [ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_06tuc"]
-[ext_resource type="Shader" path="res://shader/马赛克故障/马赛克1.gdshader" id="2_fx0i4"]
+[ext_resource type="Shader" uid="uid://m7v57dotnacd" path="res://shader/马赛克故障/马赛克1.gdshader" id="2_fx0i4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hrc3c"]
 shader = ExtResource("2_fx0i4")

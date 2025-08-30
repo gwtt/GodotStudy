@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2bm1wjve18ly"]
 
 [ext_resource type="Texture2D" uid="uid://bufgo6f76la3c" path="res://关卡选择/sprite/Hover.png" id="1_0vxvh"]
-[ext_resource type="Script" path="res://关卡选择/script/level.gd" id="2_fh28k"]
+[ext_resource type="Script" uid="uid://brkca5rviifra" path="res://关卡选择/script/level.gd" id="2_fh28k"]
 [ext_resource type="Texture2D" uid="uid://0fdjqwsxsei0" path="res://关卡选择/sprite/Locked.png" id="2_i4ass"]
 [ext_resource type="FontFile" path="res://关卡选择/font/num.tres" id="3_jnbrp"]
 

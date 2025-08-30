@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://du2j1wihmwjqo"]
+
+[ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="1_ye3hl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g37wc"]
+radius = 40.1123
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th3p5"]
+size = Vector2(34, 209)
+
+[node name="JointExample" type="Node2D"]
+position = Vector2(580, 245)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("1_ye3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_g37wc")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(2.49999, -55)
+scale = Vector2(0.578125, 3.34375)
+texture = ExtResource("1_ye3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(2, -53.5)
+shape = SubResource("RectangleShape2D_th3p5")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 2)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")

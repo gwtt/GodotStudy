@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbo37e2y20x8q"]
 
-[ext_resource type="Shader" uid="uid://nsalyphaqgro" path="res://vfx/静态火焰/static_fire.tres" id="1_d8o1v"]
+[ext_resource type="Shader" uid="uid://b70cxi306de8x" path="res://vfx/静态火焰/static_fire.tres" id="1_d8o1v"]
 [ext_resource type="Texture2D" uid="uid://cspyjjqa67jc5" path="res://vfx/静态火焰/art/T_1_pixel.jpg" id="1_qgwdk"]
 [ext_resource type="Texture2D" uid="uid://bcmjxtq0in7" path="res://vfx/静态火焰/art/T_VFX_Noise_465.png" id="2_7s7mt"]
 [ext_resource type="Texture2D" uid="uid://bya1rd4cq0d2a" path="res://vfx/静态火焰/art/T_Gradient_circle22.jpg" id="3_7s7mt"]
