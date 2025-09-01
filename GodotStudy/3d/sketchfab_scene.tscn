@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4lapq2qh5np"]
+
+[ext_resource type="PackedScene" uid="uid://dnxxvy82kpcf1" path="res://3d/3d入门/thicc_furry_scp.glb" id="1_hi6fj"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_hi6fj")]

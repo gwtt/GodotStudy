@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://be6w7dtakuqs1" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="Shader" uid="uid://d3fpa8drhh36t" path="res://addons/proto_controller/proto_controller.gdshader" id="2_5hfox"]
+[ext_resource type="PackedScene" uid="uid://dnxxvy82kpcf1" path="res://3d/3d入门/thicc_furry_scp.glb" id="2_wr06p"]
+[ext_resource type="Shader" uid="uid://brdu66wjloel0" path="res://3d/3d像素风/edge_detection.gdshader" id="3_6dqce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dqce"]
+render_priority = 0
+shader = ExtResource("2_5hfox")
+shader_parameter/tint = Color(0, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/shadow_size = 0.045
+shader_parameter/shadow_blend = 0.001
+shader_parameter/shadow_extra_intensity = 0.0
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/light_tint = Color(0, 0, 0, 1)
+shader_parameter/rimlight_size = 0.921
+shader_parameter/rimlight_blend = 0.01
+shader_parameter/rimlight_color = Color(0, 0, 0, 1)
+shader_parameter/use_normalmap = true
+shader_parameter/animated = true
+shader_parameter/time_scale = 0.02
+shader_parameter/normal_bias = Vector3(0, 0, 0)
+shader_parameter/light_bias = Vector3(0, 0, 0)
+shader_parameter/use_view = true
+shader_parameter/view_bias = Color(1, 0, 1, 1)
+shader_parameter/view_multiplier = -1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="QuadMesh" id="QuadMesh_0rk7u"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h60nn"]
+render_priority = 0
+shader = ExtResource("3_6dqce")
+shader_parameter/lightIntensity = 1.25
+shader_parameter/lineAlpha = 0.7
+shader_parameter/useLighting = true
+shader_parameter/lineHighlight = 2.435
+shader_parameter/lineShadow = 1.48
+
+[node name="ProtoController" type="CharacterBody3D"]
+script = ExtResource("1_ucva2")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_iof21")
+material_overlay = SubResource("ShaderMaterial_6dqce")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D"]
+transform = Transform3D(0.817831, -0.247631, 0.519453, 0.0581469, 0.933617, 0.353522, -0.572513, -0.258917, 0.77794, 3, -0.8, 0.5)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_0rk7u")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_h60nn")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_wr06p")]

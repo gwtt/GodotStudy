@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://dclvdpwtktfgo"]
+
+[ext_resource type="Shader" uid="uid://dbm8vj5xp6dkj" path="res://3d/3d像素风/cloud_shader.gdshader" id="1_12o0v"]
+[ext_resource type="Shader" uid="uid://c05ifjh40ewr8" path="res://3d/3d像素风/pixel_art.gdshader" id="2_lo066"]
+[ext_resource type="Texture2D" uid="uid://c14ar22ysja83" path="res://icon.png" id="2_x5r7s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v617m"]
+sky_top_color = Color(0.234468, 0.925282, 1, 1)
+sky_horizon_color = Color(1.08056, 1.08227, 1.08649, 1)
+ground_horizon_color = Color(1.08056, 1.08227, 1.08649, 1)
+
+[sub_resource type="Sky" id="Sky_12o0v"]
+sky_material = SubResource("ProceduralSkyMaterial_v617m")
+
+[sub_resource type="Environment" id="Environment_x5r7s"]
+background_mode = 2
+sky = SubResource("Sky_12o0v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v617m"]
+diffuse_mode = 3
+specular_mode = 1
+metallic = 0.5
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_lo066"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x5r7s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lo066"]
+noise = SubResource("FastNoiseLite_x5r7s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8fji"]
+render_priority = 0
+shader = ExtResource("1_12o0v")
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_lo066")
+shader_parameter/isSoft = true
+shader_parameter/speed = 0.232
+shader_parameter/brightness = 0.226
+shader_parameter/threshold = 0.472
+shader_parameter/fluffiness = 0.531
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uauuo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uauuo"]
+shader = ExtResource("2_lo066")
+shader_parameter/color1 = Vector4(0, 0, 0, 1)
+shader_parameter/color2 = Vector4(1, 1, 1, 1)
+shader_parameter/color3 = Vector4(1, 0, 0, 1)
+shader_parameter/color4 = Vector4(0, 1, 0, 1)
+shader_parameter/color5 = Vector4(0, 0, 1, 1)
+shader_parameter/color6 = Vector4(1, 1, 0, 1)
+shader_parameter/color7 = Vector4(0, 1, 1, 1)
+shader_parameter/color8 = Vector4(1, 0, 1, 1)
+shader_parameter/color9 = Vector4(0.5, 0.5, 0.5, 1)
+shader_parameter/color10 = Vector4(0.75, 0.75, 0.75, 1)
+shader_parameter/color11 = Vector4(0.5, 0, 0, 1)
+shader_parameter/color12 = Vector4(0.5, 0.25, 0, 1)
+shader_parameter/color13 = Vector4(0.5, 0.5, 0, 1)
+shader_parameter/color14 = Vector4(0.25, 0.5, 0, 1)
+shader_parameter/color15 = Vector4(0, 0.5, 0, 1)
+shader_parameter/color16 = Vector4(0, 0.5, 0.25, 1)
+shader_parameter/color17 = Vector4(0, 0.5, 0.5, 1)
+shader_parameter/color18 = Vector4(0, 0.25, 0.5, 1)
+shader_parameter/color19 = Vector4(0, 0, 0.5, 1)
+shader_parameter/color20 = Vector4(0.25, 0, 0.5, 1)
+shader_parameter/color21 = Vector4(0.5, 0, 0.5, 1)
+shader_parameter/color22 = Vector4(0.5, 0, 0.25, 1)
+shader_parameter/color23 = Vector4(1, 0.5, 0.5, 1)
+shader_parameter/color24 = Vector4(1, 0.75, 0.5, 1)
+shader_parameter/color25 = Vector4(1, 1, 0.5, 1)
+shader_parameter/color26 = Vector4(0.75, 1, 0.5, 1)
+shader_parameter/color27 = Vector4(0.5, 1, 0.5, 1)
+shader_parameter/color28 = Vector4(0.5, 1, 0.75, 1)
+shader_parameter/color29 = Vector4(0.5, 1, 1, 1)
+
+[node name="PixelArt" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x5r7s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.309204, 0.392929, 0, 0.785857, 0.618408, -0.5, 0.535557, -0.680572, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_v617m")
+mesh = SubResource("BoxMesh_lo066")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0113269, 0.999936, 0, -0.999936, 0.0113269, 0.0581376, 2.97129, 0.0369053)
+projection = 1
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.7, 0)
+material_override = SubResource("ShaderMaterial_w8fji")
+mesh = SubResource("PlaneMesh_uauuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uauuo")
+position = Vector2(966, 548)
+scale = Vector2(32.8125, 20.375)
+texture = ExtResource("2_x5r7s")
