@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bpaq7t7l7yacr"
+path="res://.godot/imported/Blank Sign Inventory Icon - Outline.png-d3d7e9e65c7a8d3be63bcd7642168edc.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://种田测试/assets/SAMPLE PACK - Pixel Gnome Crop Pack/Individual Files/Blank Sign/Blank Sign Inventory Icon - Outline.png"
+dest_files=["res://.godot/imported/Blank Sign Inventory Icon - Outline.png-d3d7e9e65c7a8d3be63bcd7642168edc.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
