@@ -1,5 +1,6 @@
 extends Node2D
- 
+
+## 需要320 x 160分辨率，比较小一点
 @onready var ground = $Ground
 @onready var crop_layer = $Crops
  
