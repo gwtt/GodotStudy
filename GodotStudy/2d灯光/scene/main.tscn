@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://babok5omg3opp"]
+[gd_scene load_steps=9 format=3 uid="uid://babok5omg3opp"]
 
 [ext_resource type="Texture2D" uid="uid://cei8ccadc8q1l" path="res://2d灯光/sprite/Sewer_NoSunlight.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://flc7ed254js0" path="res://2d灯光/scene/player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cbhys04cxii15" path="res://2d灯光/sprite/wall.png" id="3"]
 [ext_resource type="Script" uid="uid://jccnepavmlei" path="res://2d灯光/script/main.gd" id="4"]
+[ext_resource type="Script" uid="uid://dg1i2jx46b0c2" path="res://2d灯光/scene/sprite_2.gd" id="4_om8vg"]
+[ext_resource type="Script" uid="uid://cs6cpe6ou0nkf" path="res://2d灯光/scene/camera_2d.gd" id="5_h1pu6"]
+[ext_resource type="Texture2D" uid="uid://bvtw0350jxisb" path="res://2d灯光/sprite/Light -1.png" id="6_14vsm"]
 
 [sub_resource type="OccluderPolygon2D" id="1"]
 polygon = PackedVector2Array(-15, -15, -15, 15, 15, 15, 15, -16)
@@ -17,12 +20,28 @@ texture = ExtResource("1")
 centered = false
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(459, 274)
+position = Vector2(460, 274)
 occluder = SubResource("1")
 
 [node name="Sprite2" type="Sprite2D" parent="."]
 position = Vector2(460, 274)
 texture = ExtResource("3")
 
+[node name="Sprite2" type="Sprite2D" parent="Sprite2"]
+modulate = Color(0.129412, 0.129412, 0.129412, 0.529412)
+texture = ExtResource("3")
+script = ExtResource("4_om8vg")
+
 [node name="player" parent="." instance=ExtResource("2")]
 position = Vector2(226, 273)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(566, 288)
+script = ExtResource("5_h1pu6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
+position = Vector2(822, 25)
+rotation = 3.16254
+energy = 1.82
+texture = ExtResource("6_14vsm")
+texture_scale = 3.87

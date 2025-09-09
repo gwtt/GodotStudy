@@ -17,6 +17,7 @@ shape = SubResource("1")
 texture = ExtResource("2")
 
 [node name="Light2D" type="PointLight2D" parent="."]
+visible = false
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.0
